@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 235 38% 10%;
+  --foreground: 220 20% 96%;
+  --card: 236 33% 14%;
+  --card-foreground: 220 20% 96%;
+  --primary: 269 82% 68%;
+  --primary-foreground: 240 20% 98%;
+  --secondary: 238 28% 22%;
+  --secondary-foreground: 220 20% 92%;
+  --muted: 238 22% 20%;
+  --muted-foreground: 225 12% 70%;
+  --accent: 195 85% 56%;
+  --accent-foreground: 235 38% 10%;
+  --border: 238 28% 24%;
+  --input: 238 28% 24%;
+  --ring: 269 82% 68%;
+  --radius: 1rem;
+}
+
+body {
+  @apply bg-background text-foreground;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
