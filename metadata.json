@@ -1,0 +1,7 @@
+{
+  "name": "CarroSemSusto",
+  "description": "Aplicativo simples para donos de carro leigos organizarem manutenção preventiva e tomarem decisões racionais sobre trocar de veículo.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
