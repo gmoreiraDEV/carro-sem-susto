@@ -12,14 +12,24 @@ interface AppData {
 }
 
 export const useAppStore = () => {
-  const [data, setData] = useState<AppData>(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    return stored ? JSON.parse(stored) : { vehicle: null, maintenances: [] };
-  });
+  const [data, setData] = useState<AppData>({ vehicle: null, maintenances: [] });
+  const [hasHydrated, setHasHydrated] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-  }, [data]);
+    if (typeof window === 'undefined') return;
+
+    const stored = window.localStorage.getItem(STORAGE_KEY);
+    if (stored) {
+      setData(JSON.parse(stored));
+    }
+    setHasHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    if (!hasHydrated || typeof window === 'undefined') return;
+
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  }, [data, hasHydrated]);
 
   const saveVehicle = (vehicle: Vehicle) => {
     setData(prev => ({ ...prev, vehicle }));
