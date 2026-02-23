@@ -1,3 +1,5 @@
+'use client';
+
 
 import React, { useMemo } from 'react';
 import { useAppStore } from '../store';
@@ -25,7 +27,7 @@ const Dashboard: React.FC<DashboardProps> = ({ setView }) => {
   const metrics = useMemo(() => {
     const now = new Date();
     const sixMonthsAgo = new Date(now.getFullYear(), now.getMonth() - 6, now.getDate());
-    const twelveMonthsAgo = new Date(now.getFullYear - 1, now.getMonth(), now.getDate());
+    const twelveMonthsAgo = new Date(now.getFullYear() - 1, now.getMonth(), now.getDate());
 
     const last6Months = maintenances
       .filter(m => new Date(m.date) >= sixMonthsAgo)
