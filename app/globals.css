@@ -2,53 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: 0 0% 100%;
-  --foreground: 222 47% 11%;
-  --card: 0 0% 100%;
-  --card-foreground: 222 47% 11%;
-  --primary: 262 83% 58%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 210 40% 96%;
-  --secondary-foreground: 222 47% 11%;
-  --muted: 210 40% 96%;
-  --muted-foreground: 215 16% 47%;
-  --accent: 199 89% 48%;
-  --accent-foreground: 210 40% 98%;
-  --border: 214 32% 91%;
-  --input: 214 32% 91%;
-  --ring: 262 83% 58%;
-  --radius: 1rem;
-}
+@layer base {
+  :root {
+    --background: 210 25% 97%;
+    --foreground: 222 60% 14%;
 
-.dark {
-  --background: 235 38% 10%;
-  --foreground: 220 20% 96%;
-  --card: 236 33% 14%;
-  --card-foreground: 220 20% 96%;
-  --primary: 269 82% 68%;
-  --primary-foreground: 240 20% 98%;
-  --secondary: 238 28% 22%;
-  --secondary-foreground: 220 20% 92%;
-  --muted: 238 22% 20%;
-  --muted-foreground: 225 12% 70%;
-  --accent: 195 85% 56%;
-  --accent-foreground: 235 38% 10%;
-  --border: 238 28% 24%;
-  --input: 238 28% 24%;
-  --ring: 269 82% 68%;
-}
+    --card: 0 0% 100%;
+    --card-foreground: 222 60% 14%;
 
-body {
-  @apply bg-background text-foreground;
-  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-}
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 60% 14%;
 
-.dark .shadow-sm,
-.dark .shadow,
-.dark .shadow-md,
-.dark .shadow-lg,
-.dark .shadow-xl,
-.dark .shadow-2xl {
-  box-shadow: none !important;
+    /* Azul do logo */
+    --primary: 222 68% 18%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Azul claro de apoio para áreas suaves */
+    --secondary: 210 42% 93%;
+    --secondary-foreground: 222 60% 14%;
+
+    --muted: 210 28% 91%;
+    --muted-foreground: 220 18% 38%;
+
+    /* Verde do logo */
+    --accent: 152 70% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 78% 56%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 22% 85%;
+    --input: 214 22% 85%;
+    --ring: 222 68% 22%;
+
+    --radius: 0.5rem;
+
+    --font-sans: Montserrat, sans-serif;
+    --font-serif: 'Playfair Display', serif;
+    --font-mono: 'Source Code Pro', monospace;
+  }
+
+  .dark {
+    --background: 222 46% 10%;
+    --foreground: 210 24% 92%;
+
+    --card: 222 42% 14%;
+    --card-foreground: 210 24% 92%;
+
+    --popover: 222 42% 14%;
+    --popover-foreground: 210 24% 92%;
+
+    --primary: 210 40% 96%;
+    --primary-foreground: 222 68% 16%;
+
+    --secondary: 220 30% 20%;
+    --secondary-foreground: 210 24% 92%;
+
+    --muted: 220 24% 20%;
+    --muted-foreground: 215 16% 68%;
+
+    --accent: 152 65% 44%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 22% 24%;
+    --input: 220 22% 24%;
+    --ring: 210 30% 78%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
 }

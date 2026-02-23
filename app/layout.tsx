@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'CarroSemSusto',
-  description: 'Controle de manutenção automotiva sem sustos',
+  title: 'Carro Sem Susto',
+  description: 'Controle inteligente de manutenção e gastos automotivos.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }
